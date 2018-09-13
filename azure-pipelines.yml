@@ -12,7 +12,7 @@ variables:
 steps:
 - script: |
     npm install
-    docker build -f Dockerfile -t $(dockerId)/$(imageName) .
+    docker build -f Dockerfile -t $(dockerRegistry)/$(imageName) .
     docker login $(dockerRegistry) -u $(dockerId) -p $pswd
     docker push $(dockerRegistry)/$(imageName)
   env:
